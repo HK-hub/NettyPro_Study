@@ -1,0 +1,15 @@
+// 表示协议的版本
+syntax = "proto3";
+// Java 生产的外部类名也是网络传输的文件名称
+option java_outer_classname = "StudentPOJO" ;
+
+// protocBuf 使用 message 管理数据
+message Student{  // 会在 “java_outer_classname” 这个外部类生成一个内部类 Student ，他是真正发送的POJO对象
+
+  // student 中有一个属性 id ,类型为 int32(protoBuf 内部类型) ，
+  //    id = 1 赋值为1 ，这个1 表示属性的序号不是值
+
+  int32 id = 1;
+  string name = 2 ;
+
+}
