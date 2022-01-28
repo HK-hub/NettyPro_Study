@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:controller="com.hk.vfs.controller.HVFSController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox prefHeight="554.0" prefWidth="213.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="214.0">
+               <children>
+                  <ButtonBar prefHeight="75.0" prefWidth="105.0">
+                    <buttons>
+                    <!-- 前进、后退走步 : Forward and Backward -->
+                      <Button mnemonicParsing="false" fx:id="forwardButton" text="上一级" onAction="#forwardAction"/>
+                        <Button mnemonicParsing="false" fx:id="backwardButton" text="下一级" onAction="#backwardAction" />
+                    </buttons>
+                  </ButtonBar>
+               </children>
+            </HBox>
+            <TreeView prefHeight="407.0" prefWidth="214.0" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="454.0" prefWidth="631.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="52.0" prefWidth="606.0">
+               <children>
+                  <TextField fx:id="currentPath" prefHeight="50.0" prefWidth="486.0" />
+                  <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="95.0" text="前往">
+                     <HBox.margin>
+                        <Insets left="28.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="406.0" prefWidth="606.0">
+               <children>
+                  <TableView fx:id="fileTableView" prefHeight="384.0" prefWidth="606.0" editable="true">
+                    <columns>
+                      <TableColumn  fx:id="fileNameColumn" prefWidth="310.1999908685684" text="名称" />
+                      <TableColumn fx:id="updateTimeColumn" prefWidth="121.79998779296875" text="修改日期" />
+                        <TableColumn fx:id="typeColumn" prefWidth="80.80001831054688" text="类型" />
+                        <TableColumn fx:id="sizeColumn" prefWidth="93.60009765625" text="大小" />
+                    </columns>
+                  </TableView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <right>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ChoiceBox prefHeight="50.0" prefWidth="100.0">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </ChoiceBox>
+            <Button fx:id="dirAddButton" onAction="#createNewDirectoryAction" mnemonicParsing="false" text="新建目录">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="fileAddButton" onAction="#createNewFileAction" mnemonicParsing="false" text="新建文件">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="checkFileButton" onAction="#checkFileInfoAction" mnemonicParsing="false" text="查看文件">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="modifyFileButton" onAction="#modifyFileAction" mnemonicParsing="false" text="修改文件">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="deleteFileButton" onAction="#deleteFileAction" mnemonicParsing="false" text="删除文件">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea prefHeight="100.0" prefWidth="214.0" />
+            <TextArea fx:id="fileInfoTextArea" editable="false"  prefHeight="100.0" prefWidth="603.0" text="文件夹/文件信息" />
+            <Button mnemonicParsing="false" prefHeight="106.0" prefWidth="103.0" onAction="#login" text="用户">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

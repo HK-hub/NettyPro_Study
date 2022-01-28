@@ -1,0 +1,10 @@
+ext {
+    // define union version at here
+    spring = [
+            springBootVersion = "2.5.9"
+    ]
+
+
+
+
+}

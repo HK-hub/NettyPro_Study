@@ -1,0 +1,23 @@
+# 设置服务端口，地址，上下文
+server:
+  port: 9999
+  address: localhost
+  servlet:
+    context-path: /quickGraphql
+
+
+# 设置应用程序名称
+spring:
+  application:
+    name: quickGraphQL-simple
+
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 改为你的数据库链接
+    url: jdbc:mysql://127.0.0.1:3306/quick_graphql?allowPublicKeyRetrieval=true&useUnicode=true&
+    # 数据库用户名
+    username: root
+    # 数据库密码
+    password: root
+

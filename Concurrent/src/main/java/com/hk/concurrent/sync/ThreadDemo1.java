@@ -27,13 +27,15 @@ class Share{
 
     // add
     private int add(){
-
+        this.number++ ;
+        return this.number ;
     }
 
 
     // sub
     private int sub(){
-
+        this.number-- ;
+        return this.number ;
 
     }
 

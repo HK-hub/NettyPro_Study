@@ -1,0 +1,95 @@
+@startuml
+
+class Computer
+class Monitor
+class Mouse
+
+
+'生物类'
+class Live
+
+'动物类'
+abstract class Animal
+'猫科动物'
+class CatClass
+'犬科动物'
+class DogClass
+'鱼类'
+class FishClass
+'小猫'
+class Cat
+'小狗'
+class Dog
+'小丑鱼'
+class UgliFish
+
+'细胞类'
+class Cell
+
+'人类'
+class Person
+
+'头'
+class Head
+'身体'
+class Body
+'四肢'
+class Limbs
+
+
+class IDCard
+
+'睡觉'
+interface Sleep{
+
+    + hour : int
+    + sleep() : void
+
+}
+
+
+'吃饭'
+interface Eat{
+
+    - food: String
+    + eat() : void
+
+}
+
+
+
+'关系'
+'继承/泛化'
+Cell <|-- Live
+Live <|-- Animal
+Animal <|-- CatClass
+Animal <|-- DogClass
+Animal <|-- Person
+Animal <|-- FishClass
+
+CatClass <|-- Cat
+DogClass <|-- Dog
+FishClass <|-- UgliFish
+
+
+
+'实现'
+Eat <|.. Animal
+Sleep <|.. Animal
+
+
+'关联关系'
+IDCard <-- Person
+
+'聚合关系：整体与部分可以分离'
+Computer o-- Monitor
+Computer o-- Mouse
+
+
+'组合关系'
+Person *-- Head
+Person *-- Body
+Person *-- Limbs
+
+
+@enduml

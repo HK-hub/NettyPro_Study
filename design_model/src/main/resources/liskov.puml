@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+'类，抽象类，接口的声明方式'
+abstract class AbstractList
+abstract AbstractCollection
+
+'包绘制'
+package com.hk.list <<Frame>>{
+    interface List
+    interface Collection{
+
+    }
+}
+
+
+
+
+'依赖 <.. ：表示使用关系'
+'关联 —— ：表示类与类之间有联系'
+'泛化 <|————：表示继承类关系'
+'实现 <|---：表示实现接口关系'
+'聚合 ：是关联关系的一种特例'
+'组合：是关联关系的一种特例，耦合性比聚合强'
+
+
+''
+List <|-- AbstractList : implements
+Collection <|-- AbstractCollection
+
+Collection <|-- List
+AbstractCollection <|-- AbstractList
+AbstractList <|-- ArrayList
+
+
+
+'成员变量，成员方法直接进行书写：根据是否具有() 来判断是成员变量还是成员函数'
+class ArrayList {
+    - Object[] elementData
+    # empty() : boolean
+    + size():int
+
+}
+
+
+
+
+
+@enduml

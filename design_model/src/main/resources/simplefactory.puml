@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Pizza{
+
+    - String name ;
+
+    + prepare() :void
+    + bake() : void
+    + cut() : void
+    + box() : Pizza
+
+}
+
+class ChessPizza
+
+class GreekPizza
+
+'继承'
+Pizza <|-- ChessPizza : 继承
+Pizza <|-- GreekPizza : 继承
+
+
+@enduml

@@ -44,7 +44,7 @@ class LTicket{
         try{
             if (num > 0){
                 num-- ;
-                System.out.println(Thread.currentThread().getName() + " 正在买票, " + " 剩余票数："+ num);
+                //System.out.println(Thread.currentThread().getName() + " 正在买票, " + " 剩余票数："+ num);
             }
         }finally {
 
